@@ -39,8 +39,8 @@ Nesse estágio, as seguintes classes foram criadas:
 - `Salário` (Double) - Herdado da classe Funcionário
 - `Setor` (String) - Herdado da classe Funcionário
 - `Cargo` (String) - Herdado da classe Funcionário
-- `Empresa Contratada`
-- `Tempo Previsto de Permanência`
+- `EmpresaContratada`
+- `TempoPermanencia`
 
 **Métodos:**
 - `ajustarSalario()` - Herdado da classe Funcionário

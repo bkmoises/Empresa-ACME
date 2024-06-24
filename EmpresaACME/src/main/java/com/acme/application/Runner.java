@@ -18,7 +18,8 @@ public class Runner {
                 4000.00,
                 0,
                 2,
-                "Empresa XYZ"
+                "Empresa XYZ",
+                10
         );
         Funcionario.adicionarFuncionario(funcionario1);
         Funcionario.adicionarFuncionario(funcionario2);
