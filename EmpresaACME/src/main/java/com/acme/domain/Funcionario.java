@@ -1,9 +1,14 @@
 package com.acme.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Funcionario {
+    public static final List<String> setores = Arrays.asList("DESENVOLVIMENTO", "DEVOPS", "BANCO DE DADOS");
+    public static final List<String> cargos = Arrays.asList("ESTAGIARIO", "JUNIOR", "PLENO", "SENIOR");
+
+
     private String nome;
     private List<String> telefones;
     private String endereco;
@@ -12,13 +17,13 @@ public class Funcionario {
     private String cargo;
     private static List<Funcionario> funcionarios = new ArrayList<>();
 
-    public Funcionario(String nome, List<String> telefones, String endereco, double salario, String setor, String cargo) {
+    public Funcionario(String nome, List<String> telefones, String endereco, double salario, int codigoSetor, int codigoCargo) {
         this.nome = nome;
         this.telefones = telefones;
         this.endereco = endereco;
         this.salario = salario;
-        this.setor = setor;
-        this.cargo = cargo;
+        this.setor = setores.get(codigoSetor);
+        this.cargo = cargos.get(codigoCargo);
     }
 
     public void reajustarSalario(double aumentoPercentual) {

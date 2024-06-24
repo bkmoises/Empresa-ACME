@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
-        Funcionario funcionario1 = new Funcionario("João Silva", new ArrayList<>(Arrays.asList("123456789", "987654321")), "Rua A, 123", 3000.0, "Vendas", "Vendedor");
-        Funcionario funcionario2 = new Funcionario("Maria Souza", new ArrayList<>(Arrays.asList("123456987", "987654123")), "Rua B, 456", 4000.0, "RH", "Recursos Humanos");
+        Funcionario funcionario1 = new Funcionario("João Silva", new ArrayList<>(Arrays.asList("123456789", "987654321")), "Rua A, 123", 3000.0, 2, 3);
+        Funcionario funcionario2 = new Funcionario("Maria Souza", new ArrayList<>(Arrays.asList("123456987", "987654123")), "Rua B, 456", 4000.0, 0, 2);
 
         Funcionario.adicionarFuncionario(funcionario1);
         Funcionario.adicionarFuncionario(funcionario2);
@@ -19,6 +19,21 @@ public class Runner {
         System.out.println("Listando Funcionários:");
         System.out.println("======================");
         Funcionario.listarFuncionarios();
+        System.out.println("======================\n");
+
+        System.out.println("======================");
+        System.out.println("Funcionario 1:");
+        System.out.println("======================");
+        System.out.println("Cargo: " + funcionario1.getCargo());
+        System.out.println("Setor: " + funcionario1.getSetor());
+        System.out.println("======================\n");
+
+        System.out.println("======================");
+        System.out.println("Funcionario 2:");
+        System.out.println("======================");
+
+        System.out.println("Cargo: " + funcionario2.getCargo());
+        System.out.println("Setor: " + funcionario2.getSetor());
         System.out.println("======================\n");
 
         System.out.println("======================");
