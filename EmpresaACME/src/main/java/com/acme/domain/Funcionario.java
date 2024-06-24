@@ -1,43 +1,23 @@
 package com.acme.domain;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Funcionario {
-    public static final List<String> setores = Arrays.asList("DESENVOLVIMENTO", "DEVOPS", "BANCO DE DADOS");
-    public static final List<String> cargos = Arrays.asList("ESTAGIARIO", "JUNIOR", "PLENO", "SENIOR");
-
-
     private String nome;
     private List<String> telefones;
     private String endereco;
     private double salario;
-    private String setor;
-    private String cargo;
-    private static List<Funcionario> funcionarios = new ArrayList<>();
+    private Setor setor;
+    private Cargo cargo;
 
-    public Funcionario(String nome, List<String> telefones, String endereco, double salario, int codigoSetor, int codigoCargo) {
+    public Funcionario(String nome, List<String> telefones, String endereco, double salario,
+                       Setor setor, Cargo cargo) {
         this.nome = nome;
         this.telefones = telefones;
         this.endereco = endereco;
         this.salario = salario;
-        this.setor = setores.get(codigoSetor);
-        this.cargo = cargos.get(codigoCargo);
-    }
-
-    public void reajustarSalario(double aumentoPercentual) {
-        salario *= (1 + aumentoPercentual / 100);
-    }
-
-    public static void adicionarFuncionario(Funcionario funcionario) {
-        funcionarios.add(funcionario);
-    }
-
-    public static void listarFuncionarios() {
-        for (Funcionario funcionario : funcionarios) {
-            System.out.println(funcionario.getNome());
-        }
+        this.setor = setor;
+        this.cargo = cargo;
     }
 
     public String getNome() {
@@ -72,19 +52,32 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public String getSetor() {
+    public Setor getSetor() {
         return setor;
     }
 
-    public void setSetor(String setor) {
+    public void setSetor(Setor setor) {
         this.setor = setor;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", telefones=" + telefones +
+                ", endereco='" + endereco + '\'' +
+                ", salario=" + salario +
+                ", setor=" + setor +
+                ", cargo=" + cargo +
+                '}';
+    }
+
 }
