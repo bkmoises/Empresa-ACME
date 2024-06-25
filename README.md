@@ -10,6 +10,6 @@ Este projeto foi desenvolvido para a disciplina de Clean Code do curso de Engenh
 
 
 
-Engenharia de Software - Clean Code 
+Engenharia de Software - Clean Code e Padrões de Projeto
 
 Moisés Reis de Andrade  
