@@ -28,7 +28,7 @@ Nesse estágio, as seguintes classes foram criadas:
 - `listarFuncionarios()`: Método para listar os funcionários.
 - `adicionarFuncionario()`: Método para adicionar um novo funcionário.
 
-**Classe Funcionário Terceirizado**
+**Classe FuncionárioTerceirizado**
 
 *Estende da classe `Funcionário`*
 
