@@ -85,3 +85,24 @@ Com a eliminação dessas variáveis, não havia mais necessidade de acessar a l
 
 **Métodos:**
 - `reajustarSalario()`: Método para reajustar o salário do funcionário com base em um aumento percentual fornecido como parâmetro.
+
+### Terceira Entrega
+
+#### Implementação
+
+Durante essa etapa, implementei alguns design patterns para melhorar a estrutura do código, tornando-o mais seguro e eficiente.
+
+Dentre os design patterns implementados, destaco os seguintes:
+
+**Design Patterns Criacionais:**
+
+-   **Builder:** O padrão Builder foi escolhido para a implementação das classes `Funcionario`, `FuncionarioTerceirzado` e `FuncionarioACME` devido às vantagens que proporciona em termos de flexibilidade, legibilidade e manutenção do código. Utilizando esse padrão, consegui manter a imutabilidade das classes, impedindo que sejam alteradas por outros métodos. Além disso, o Builder permite a construção de objetos sem a necessidade de passar todos os atributos na ordem exigida pelo construtor tradicional, o que simplifica o processo de criação e evita erros.
+ - **Factory Method:** O Factory Method foi escolhido para a criação de objetos `Endereco`. Essa abordagem permite a separação do objeto da lógica de negócios, tornando a estrutura mais flexível e modular. Ao adotar o Factory Method, pude reduzir significativamente o acoplamento da classe, possibilitando uma maior  manutenibilidade do código.
+
+**Design Patterns Estruturais:**
+
+ - **Proxy:** O padrão de design Proxy foi implementado na classe `RhServiceProxy` para melhorar a modularidade, segurança e controle sobre as operações realizadas pela classe `RhService`. Ao incluir a lógica de verificação de autorização dentro do `RhServiceProxy`, garantimos que as operações sensíveis sejam realizadas com segurança. 
+ Esse padrão  ajuda a desacoplar o código cliente do código de implementação real.
+
+**Design Patterns Comportamentais:**
+- **State:** O padrão State foi implementado em várias partes do código, trabalhando em conjunto com outros padrões. No entanto, focarei aqui no método `proximoCargo`, que é utilizado no método `promover`. Esse método determina o próximo estado do objeto `Cargo`, seguindo a ordem definida no Enum `Cargo`.

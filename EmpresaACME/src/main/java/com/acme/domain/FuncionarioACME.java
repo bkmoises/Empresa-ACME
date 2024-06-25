@@ -1,17 +1,30 @@
 package com.acme.domain;
 
-import java.util.List;
-
 public class FuncionarioACME extends Funcionario {
-
-    public FuncionarioACME(String nome, List<String> telefones, String endereco,
-                           double salario, Setor setor, Cargo cargo) {
-        super(nome, telefones, endereco, salario, setor, cargo);
+    public FuncionarioACME(Builder builder) {
+        super(builder);
     }
 
-    public void reajustarSalario(double aumentoPercentual) {
-        double salarioAtual = getSalario();
-        double aumento = salarioAtual * (aumentoPercentual / 100);
-        setSalario(salarioAtual + aumento);
+    public FuncionarioACME salarioReajustado(double novoSalario) {
+        return (FuncionarioACME) new Builder()
+                .setNome(this.getNome())
+                .setTelefones(this.getTelefones())
+                .setEndereco(this.getEndereco())
+                .setSalario(novoSalario)
+                .setSetor(this.getSetor())
+                .setCargo(this.getCargo())
+                .build();
+    }
+
+    public static class Builder extends Funcionario.Builder<Builder> {
+        @Override
+        protected Builder self() {
+            return this;
+        }
+
+        @Override
+        public FuncionarioACME build() {
+            return new FuncionarioACME(this);
+        }
     }
 }

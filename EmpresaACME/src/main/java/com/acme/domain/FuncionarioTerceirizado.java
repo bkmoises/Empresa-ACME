@@ -1,32 +1,45 @@
 package com.acme.domain;
 
-import java.util.List;
-
 public class FuncionarioTerceirizado extends Funcionario {
     private String empresaContratada;
-    private int tempoPrevistoPermanencia;
+    private int tempoPrevistoDePermanencia;
 
-    public FuncionarioTerceirizado(String nome, List<String> telefones, String endereco,
-                                   double salario, Setor setor, Cargo cargo,
-                                   String empresaContratada, int tempoPrevistoPermanencia) {
-        super(nome, telefones, endereco, salario, setor, cargo);
-        this.empresaContratada = empresaContratada;
-        this.tempoPrevistoPermanencia = tempoPrevistoPermanencia;
+    private FuncionarioTerceirizado(Builder builder) {
+        super(builder);
+        this.empresaContratada = builder.empresaContratada;
+        this.tempoPrevistoDePermanencia = builder.tempoPrevistoDePermanencia;
     }
 
     public String getEmpresaContratada() {
         return empresaContratada;
     }
 
-    public void setEmpresaContratada(String empresaContratada) {
-        this.empresaContratada = empresaContratada;
+    public int getTempoPrevistoDePermanencia() {
+        return tempoPrevistoDePermanencia;
     }
 
-    public int getTempoPrevistoPermanencia() {
-        return tempoPrevistoPermanencia;
-    }
+    public static class Builder extends Funcionario.Builder<Builder> {
+        private String empresaContratada;
+        private int tempoPrevistoDePermanencia;
 
-    public void setTempoPrevistoPermanencia(int tempoPrevistoPermanencia) {
-        this.tempoPrevistoPermanencia = tempoPrevistoPermanencia;
+        public Builder setEmpresaContratada(String empresaContratada) {
+            this.empresaContratada = empresaContratada;
+            return this;
+        }
+
+        public Builder setTempoPrevistoDePermanencia(int tempoPrevistoDePermanencia) {
+            this.tempoPrevistoDePermanencia = tempoPrevistoDePermanencia;
+            return this;
+        }
+
+        @Override
+        public FuncionarioTerceirizado build() {
+            return new FuncionarioTerceirizado(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
     }
 }
