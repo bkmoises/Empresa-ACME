@@ -49,7 +49,7 @@ Nesse estágio, as seguintes classes foram criadas:
 	 
 #### Implementação
 
-Nessa fase do projeto, o foco foi criar um programa o mais simples possível, em conformidade com os requisitos iniciais estabelecidos. As classes foram implementadas conforme descrito anteriormente, garantindo a estruturação básica do sistema. A decisão de criar a classe `Funcionário Terceirizado` como uma extensão da classe `Funcionário` foi tomada visando reduzir a redundância de código e promover o reuso dos atributos e métodos compartilhados entre ambas as classes.
+Nessa fase do projeto, o foco foi criar um programa o mais simples possível, em conformidade com os requisitos iniciais estabelecidos. As classes foram implementadas conforme descrito anteriormente, garantindo a estruturação básica do sistema. A decisão de criar a classe `FuncionárioTerceirizado` como uma extensão da classe `Funcionário` foi tomada visando reduzir a redundância de código e promover o reuso dos atributos e métodos compartilhados entre ambas as classes.
 
 Para facilitar o acesso aos métodos de cada classe, optei por torná-los estáticos, possibilitando sua chamada sem a necessidade de instanciar novos objetos. 
 
